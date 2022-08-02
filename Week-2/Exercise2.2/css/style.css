@@ -24,44 +24,33 @@ main h3 {
 .square {
     width: 100px;
     height: 100px;
+    transition: transform 1s linear;
 }
 
 .red {
     background-color: red;
+    transform-origin: top left;
 }
 
 .yellow {
     background-color: yellow;
+    transform-origin: top right;
 }
 
 .green {
     background-color: green;
+    transform-origin: bottom right;
 }
 
 .blue {
     background-color: blue;
-}
-
-main:hover .red {
-    transition: transform 1s linear;
-    transform: rotate(90deg);
-    transform-origin: top left;
-}
-
-main:hover .yellow {
-    transition: transform 1s linear;
-    transform: rotate(-90deg);
-    transform-origin: top right;
-}
-
-main:hover .green {
-    transition: transform 1s linear;
-    transform: rotate(90deg);
-    transform-origin: bottom right;
-}
-
-main:hover .blue {
-    transition: transform 1s linear;
-    transform: rotate(-90deg);
     transform-origin: bottom left;
+}
+
+main:hover .red,main:hover .green {
+    transform: rotate(90deg);
+}
+
+main:hover .yellow, main:hover .blue {
+    transform: rotate(-90deg);
 }

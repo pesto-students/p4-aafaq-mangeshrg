@@ -28,6 +28,32 @@ footer {
     width: 30%;
     margin: auto
 }
+
+input[type=submit] {
+    background: #94cbf8;
+    color: #fff;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #eee;
+    height: 35px;
+    width: 100px;
+    text-shadow: none;
+    cursor: pointer;
+}
+input[type=submit]:hover, input[type=submit]:focus {
+    background: #016ABC;
+    color: #fff;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #eee;
+    text-shadow: none;
+}
+
+input, select {
+    padding:3px;
+    border-radius:3px;
+    border: 1px solid #979797;
+}
   
 @media screen and (max-width: 992px){
     .grid{
