@@ -10,17 +10,14 @@ function memoize(func){
     } 
  }
 
-function add(a, b) {
+function add(...args) {
     console.log('computing...');
-    if(isNaN(b)) {
-        return a;
-    }
-    return a + b;
+    return args.reduce((a, b) => a + b);
 }
 
 const memoizeAdd = memoize(add);
 
-console.log(memoizeAdd(100,100));
+console.log(memoizeAdd(100,100,200));
 console.log(memoizeAdd(100));
 console.log(memoizeAdd(100,200));
 console.log(memoizeAdd(100,200));
