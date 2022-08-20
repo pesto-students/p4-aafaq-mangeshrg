@@ -1,25 +1,23 @@
-let i = 2;
-let fib = [0, 1]; // Initialize array!
-
-let fibItr = {
-        [Symbol.iterator]() {
-            this.limit = 10;
-            return this;
-        },
-        next() {
-            fib[i] = fib[i - 2] + fib[i - 1];
-            i++;
-            return { value : fib[i - 1], done : i < this.limit };
+const Fib = (n) => ({
+    [Symbol.iterator]: () => {
+        let i = 1, prev = 0, current = 0;
+        return {
+            next: () => {
+                if (i++ <= n) {
+                [prev, current] = [current, (prev + current) || 1];
+                    return {
+                        value: prev,
+                        done: false
+                    }
+                }
+                else {
+                    return {
+                        done: true
+                    }
+                }
+            }
         }
     }
+});
 
-fibItr.next();
-fibItr.next();
-fibItr.next();
-fibItr.next();
-fibItr.next();
-fibItr.next();
-fibItr.next();
-fibItr.next();
-fibItr.next();
-console.log(fib);
+console.log([...Fib(8)]);
