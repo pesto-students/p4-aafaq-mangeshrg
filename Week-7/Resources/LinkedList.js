@@ -101,4 +101,13 @@ export default class LinkedList
             current = current.next;
         }
     }
+
+    checkLoop() {
+        let current = this.head;
+        for (let i = 0; i < this.size - 1; i++) {
+            current = current.next;
+        }
+
+        return current.next != null;
+    }
 }
