@@ -1,22 +1,25 @@
 import Queue from '../Resources/Queue.js';
 
-var queue = new Queue();
- 
-for(var i = 0; i < 6;i++){
-	queue.enqueue(Math.floor(Math.random()*100));
+function funcQueue(inpArr) {
+    var queue = new Queue();
+    let output = [];
+    for (let i = 0; i < inpArr.length; i++) {
+        if(inpArr[i] == 1) {
+            i++;
+            queue.enqueue(inpArr[i]);
+        } else {
+            output.push(queue.dequeue());
+        }
+    }
+
+    return output;
 }
 
-console.log('Original Queue');
-queue.print();
+let input1 = [1,2,1,3,2,1,4,2];
+console.log(funcQueue(input1)); //Output [2, 3]
 
-queue.dequeue();
-queue.print();
+let input2 = [1,2,2,2,1,4];
+console.log(funcQueue(input2)); //Output [2, -1]
 
-queue.dequeue();
-queue.print();
-
-queue.dequeue();
-queue.print();
-
-//Time Complexity: for push O(n) for pop O(1)
-//Space Complexity : O(n)
+//Time Complexity: for push O(1) for pop O(n)
+//Space Complexity : O(1)

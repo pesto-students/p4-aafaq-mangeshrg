@@ -11,17 +11,19 @@ export default class Queue
 
     dequeue() {
         if (this.stack1.length === 0 && this.stack2.length === 0) {
-            return false
+            return -1;
         } else {
             while(!this.stack1.length == 0)  {
                 this.stack2.push(this.stack1.pop())  
             }
             
-            this.stack2.pop()
+            let item = this.stack2.pop()
             
             while(!this.stack2.length == 0)  {
                 this.stack1.push(this.stack2.pop())  
             }
+
+            return item;
         }
     }
 
