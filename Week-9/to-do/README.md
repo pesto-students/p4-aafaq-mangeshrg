@@ -16,5 +16,5 @@ npm start
 
 ### App Screenshot
 <div align="center">
-    <img src="/public/screenshot.png">
+    <img src="public/screenshot.png">
 </div>
