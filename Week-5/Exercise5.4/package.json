@@ -1,0 +1,14 @@
+{
+  "name": "exercise5.4",
+  "version": "1.0.0",
+  "description": "Jest Exercise",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Mangesh",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.0.1"
+  }
+}
